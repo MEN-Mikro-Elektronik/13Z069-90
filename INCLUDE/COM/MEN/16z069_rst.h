@@ -1,0 +1,126 @@
+/***********************  I n c l u d e  -  F i l e  ***********************/
+/**
+ *         \file 16z069_rst.h
+ *
+ *       \author rt
+ *        $Date: 2007/11/23 15:15:47 $
+ *    $Revision: 3.2 $
+ *
+ *        \brief Header file for reset controller in Chameleon FPGA
+ *
+ * Covers IP core 16Z069_RST
+ *
+ *     Switches: -
+ */
+/*-------------------------------[ History ]---------------------------------
+ *
+ * $Log: 16z069_rst.h,v $
+ * Revision 3.2  2007/11/23 15:15:47  cs
+ * fixed:
+ *   - only include defines/typedefs for MenMon when used for MenMon
+ *
+ * Revision 3.1  2007/07/20 18:26:28  rt
+ * Initial Revision
+ *
+ *
+ *---------------------------------------------------------------------------
+ * (c) Copyright 2007 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+ ****************************************************************************/
+
+#ifndef _Z069_RST_H
+#define _Z069_RST_H
+
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
+/*-----------------------------------------+
+|  TYPEDEFS                                |
++-----------------------------------------*/
+#ifdef MENMON
+/* watchdog object */
+typedef struct {
+	MM_WDOG std;
+	MACCESS ma;
+	u_int16 trigValue;			/**< value to write next into WDVR */
+} MMCHAM_16Z069WDOG;
+
+/* reset controller object */
+struct MMCHAM_16Z069RST_S;
+typedef struct MMCHAM_16Z069RST_S MMCHAM_16Z069RST;
+
+struct MMCHAM_16Z069RST_S
+{
+	MM_OBJECT mmObj;
+
+	/*---------------+
+	|  METHODS       |
+	+---------------*/
+    /**********************************************************************/
+    /** destroy object
+	 */
+	void (*destroy)( MMCHAM_16Z069RST** thisP );
+    /**********************************************************************/
+    /** request reset
+	 */
+	void (*reset)( MMCHAM_16Z069RST* this, u_int16 mask );
+    /**********************************************************************/
+    /** get reset cause (bitmask)
+	 */
+	u_int16 (*getResetCause)( MMCHAM_16Z069RST* this, int clearRstCause );
+	/**********************************************************************/
+	/**	attach system unit's watchdog to MENMON	watchdog dispatcher
+	 */
+	int (*attachWdog)( MMCHAM_16Z069RST* this );
+	/**********************************************************************/
+	/**	detach system unit's watchdog
+	 */
+	void (*detachWdog)( MMCHAM_16Z069RST* this );
+
+	/*---------------+
+	|  PRIVATE DATA  |
+	+---------------*/
+	CHAMELEON_HANDLE* _chah;		/**< chameleon handle  */
+	MACCESS _ma;					/**< fpga unit base address */
+	MMCHAM_16Z069WDOG* _wdog;		/**< watchdog object */
+};
+
+/*-----------------------------------------+
+|  PROTOTYPS                               |
++-----------------------------------------*/
+/**********************************************************************/
+/** Create reset controller object
+*/
+MMCHAM_16Z069RST* MMCHAM_16z069RstCreate( u_int32 busNo, u_int32 devNo );
+#endif /* MENMON */
+
+/*--------------------------------------+
+|   DEFINES                             |
++--------------------------------------*/
+
+/* register offsets */
+
+#define Z069_RST_RCR		0x00	/**< Reset Cause Register (rwc) */
+#define Z069_RST_RMR		0x04	/**< Reset Mask Register (rw) */
+#define Z069_RST_RRR		0x08	/**< Reset Request Register (rw) */
+#define Z069_RST_WTR		0x10	/**< Watchdog Timer Register (rw) */
+#define Z069_RST_WVR		0x14	/**< Watchdog Value Register (rw) */
+
+/* bits in WTR */
+#define Z069_RST_WTR_WDEN		0x8000	/**< Watchdog enable */
+#define Z069_RST_WTR_WDET_MASK	0x7FFF	/**< Watchdog expiration time mask */
+
+/* bits in WVR */
+#define Z069_RST_WVR_TRIG_VAL	0x5555	/**< Init watchdog trigger value */
+
+/* watchdog timing */
+#define Z069_WDOG_FREQ		500	/**< timer counts at this frequency (HZ) */
+#define Z069WDOG_SHORT_TOUT 20	/**< timeout in WDOG_STATE_SHORT_TOUT (1/10s)*/
+
+#ifdef __cplusplus
+	}
+#endif
+
+#endif	/* _Z069_RST_H */
+
+
