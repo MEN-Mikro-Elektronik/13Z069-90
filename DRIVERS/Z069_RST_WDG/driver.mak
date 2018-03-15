@@ -23,7 +23,7 @@
 #   (c) Copyright 2008 by MEN mikro elektronik GmbH, Nuernberg, Germany 
 #*****************************************************************************
 
-MAK_NAME=lx_z069
+MAK_NAME=lx_z69
 
 MAK_LIBS=
 

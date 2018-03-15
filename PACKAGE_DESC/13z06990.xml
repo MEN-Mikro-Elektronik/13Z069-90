@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13z06990</name>
-	<description>Linux resetcontroller driver package for MEN 16Z069 Watchdog and Resetcontroller</description>
+	<description>Linux driver package for 16Z069 Watchdog/Resetcontroller</description>
 	<date>2018-03-15</date>
 	<revision>2.0</revision>
         <modellist>
@@ -20,7 +20,7 @@
 			<swmodulelist>
 				<swmodule>
 					<name>men_lx_z69</name>
-					<description>Linux char driver for 16Z025</description>
+					<description>Linux native driver for 16Z069</description>
 					<type>Native Driver</type>
 					<makefilepath>DRIVERS/Z069_RST_WDG/driver.mak</makefilepath>
                     		<os>Linux</os>
