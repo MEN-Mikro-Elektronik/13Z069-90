@@ -117,6 +117,16 @@ MMCHAM_16Z069RST* MMCHAM_16z069RstCreate( u_int32 busNo, u_int32 devNo );
 #define Z069_WDOG_FREQ		500	/**< timer counts at this frequency (HZ) */
 #define Z069WDOG_SHORT_TOUT 20	/**< timeout in WDOG_STATE_SHORT_TOUT (1/10s)*/
 
+/* MEN specific IOCTL codes */
+#define	Z069_WDT_IOCTL_BASE	'M'
+
+#define RSTIOC_SET_RESET_MASK       	_IOW(Z069_WDT_IOCTL_BASE, 1, int)
+#define RSTIOC_GET_RESET_MASK       	_IOR(Z069_WDT_IOCTL_BASE, 2, int)
+#define RSTIOC_SET_RESET_CAUSE      	_IOW(Z069_WDT_IOCTL_BASE, 3, int)
+#define RSTIOC_GET_RESET_CAUSE      	_IOR(Z069_WDT_IOCTL_BASE, 4, int)
+#define RSTIOC_SET_RESET_REQUEST    	_IOW(Z069_WDT_IOCTL_BASE, 5, int)
+#define RSTIOC_GET_RESET_REQUEST    	_IOR(Z069_WDT_IOCTL_BASE, 6, int)
+
 #ifdef __cplusplus
 	}
 #endif

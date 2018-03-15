@@ -2,11 +2,11 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13z06990</name>
 	<description>Linux resetcontroller driver package for MEN 16Z069 Watchdog and Resetcontroller</description>
-	<date>2018-03-07</date>
-	<revision>1.3</revision>
+	<date>2018-03-15</date>
+	<revision>2.0</revision>
         <modellist>
 		<model>
-			<hwname>16Z069_RSTCTRL</hwname>
+			<hwname>16Z069_RST_WDG</hwname>
 			<description>Watchdog and Resetcontroller in Chameleon FPGA</description>
 			<devnameprefix>RSTCTRL</devnameprefix>
 			<devtype>NATIVE</devtype>
@@ -22,7 +22,7 @@
 					<name>men_lx_z69</name>
 					<description>Linux char driver for 16Z025</description>
 					<type>Native Driver</type>
-					<makefilepath>DRIVERS/13Z025/driver.mak</makefilepath>
+					<makefilepath>DRIVERS/Z069_RST_WDG/driver.mak</makefilepath>
                     		<os>Linux</os>
 				</swmodule>
 				<swmodule>
