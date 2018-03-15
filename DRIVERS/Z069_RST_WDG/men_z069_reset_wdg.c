@@ -141,7 +141,7 @@ static struct miscdevice z069_watchdog_miscdev=
 void Z69WRITE_D16(char *base, unsigned int offs, u_int16 val)
 {
 	if(G_ioMapped)
-		outw(val, (unsigned int)(base + offs));
+		outw(val, (unsigned long)(base + offs));
 	else
 		writew(val, (char*)(base + offs));
 }
@@ -155,7 +155,7 @@ u_int16 Z69READ_D16(char *base, unsigned int offs)
 	u16 retval;
 
 	if(G_ioMapped)
-		retval = inw((unsigned int)(base + offs));
+		retval = inw((unsigned long)(base + offs));
 	else
 		retval = readw((char*)(base + offs));
 	return retval;
