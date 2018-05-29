@@ -2,8 +2,8 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13z06990</name>
 	<description>Linux driver package for 16Z069 Watchdog/Resetcontroller</description>
-	<date>2018-03-15</date>
-	<revision>2.0</revision>
+	<date>2018-05-29</date>
+	<revision>2.1</revision>
         <modellist>
 		<model>
 			<hwname>16Z069_RST_WDG</hwname>
