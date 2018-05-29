@@ -63,6 +63,10 @@ static int debug = DEBUG_DEFAULT; /**< enable debug printouts */
 module_param(debug, int, S_IRUGO | S_IWUSR);
 MODULE_PARM_DESC(debug, "Enable debugging printouts (default " M_INT_TO_STR(DEBUG_DEFAULT) ")");
 
+static int device = 0; /**< attach the driver to this Z069 device instance */
+module_param(device, int, S_IRUGO);
+MODULE_PARM_DESC(device, "Attach the driver to this Z069 device instance (default 0 = first detected device)");
+
 /*
  * about CONFIG_WATCHDOG_NOWAYOUT from menuconfig:
  * The default watchdog behaviour (which you get if you say N here) is
@@ -93,6 +97,8 @@ static int G_expectClose = 0; /**< user has written a "V"  */
 static char *G_wdBase; 	/**< mapped wdog reg base   */
 static u32 G_ioMapped; 	/**< nonzero if Z69 is IO mapped  */
 static u32 G_wdMargin;
+
+static int G_device_cnt = 0; /**< increment this variable after each call of z069_probe */
 
 /*
  * Prototypes
@@ -497,6 +503,11 @@ static int z069_probe(CHAMELEON_UNIT_T *chu)
 
 	sema_init(&G_openSem, 1);
 	sema_init(&G_wdtLock, 1);
+
+	/*--- check for the right Z069 device instance ---*/
+	if ( device != G_device_cnt++ ) {
+		return -ENODEV;
+	}
 
 	/*--- are we io-mapped ? ---*/
 	G_ioMapped = pci_resource_flags(chu->pdev, chu->bar) & IORESOURCE_IO;
