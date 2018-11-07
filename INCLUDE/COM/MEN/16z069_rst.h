@@ -12,17 +12,7 @@
  *
  *     Switches: -
  */
-/*-------------------------------[ History ]---------------------------------
- *
- * $Log: 16z069_rst.h,v $
- * Revision 3.2  2007/11/23 15:15:47  cs
- * fixed:
- *   - only include defines/typedefs for MenMon when used for MenMon
- *
- * Revision 3.1  2007/07/20 18:26:28  rt
- * Initial Revision
- *
- *
+/*
  *---------------------------------------------------------------------------
  * (c) Copyright 2007 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
  ****************************************************************************/

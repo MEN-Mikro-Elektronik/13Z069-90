@@ -11,18 +11,7 @@
  *     Switches: MAC_MEM_MAPPED / MAC_IO_MAPPED;
  *               MAC_BYTESWAP
  */
-/*-------------------------------[ History ]---------------------------------
- *
- * $Log: men_z069_reset_wdg_int.h,v $
- * Revision 1.2  2009/02/09 10:42:53  rt
- * R:1. Cosmetics.
- * M:1. Avoid compiler warnings.
- *
- * Revision 1.1  2008/07/14 10:11:49  aw
- * Initial Revision
- *
- *
- *
+/*
  *---------------------------------------------------------------------------
  * (c) Copyright 2008 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
  ****************************************************************************/
