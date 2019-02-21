@@ -6,22 +6,21 @@
 #  
 #    Description: makefile descriptor for z069 reset/wdg kernel module
 #                      
-#---------------------------------[ History ]---------------------------------
-#
-# $Log: driver.mak,v $
-# Revision 1.3  2010/12/03 19:23:03  ts
-# R: cosmetics, log footer was missing
-# M: added log macro
-#
-# Revision 1.2  25.07.2008 10:15:09 by aw
-# R: driver supports not only reset functionality
-# M: rename driver to z069_reset_wdg
-#
-# Revision 1.1  14.07.2008 10:13:04 by aw
-# Initial Revision
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2008 by MEN mikro elektronik GmbH, Nuernberg, Germany 
+#   Copyright (c) 2008-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=lx_z69
 
