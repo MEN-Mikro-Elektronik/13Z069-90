@@ -4,16 +4,16 @@
 	<description>Linux driver package for 16Z069 Watchdog/Resetcontroller</description>
 	<date>2018-05-29</date>
 	<revision>2.1</revision>
-        <modellist>
+	<modellist>
 		<model>
 			<hwname>16Z069_RST_WDG</hwname>
 			<description>Watchdog and Resetcontroller in Chameleon FPGA</description>
 			<devnameprefix>RSTCTRL</devnameprefix>
 			<devtype>NATIVE</devtype>
 			<busif>ChameleonBus</busif>
-	            	<autoid>
-                		<chamunitid>0x45</chamunitid>
-        	    	</autoid>
+			<autoid>
+				<chamunitid>0x45</chamunitid>
+			</autoid>
 			<settinglist>
 				<debugsetting desc="false" drv="false" mk="false" oss="false"/>
 			</settinglist>
@@ -23,14 +23,14 @@
 					<description>Linux native driver for 16Z069</description>
 					<type>Native Driver</type>
 					<makefilepath>DRIVERS/Z069_RST_WDG/driver.mak</makefilepath>
-                    		<os>Linux</os>
+					<os>Linux</os>
 				</swmodule>
 				<swmodule>
 					<name>men_lx_chameleon</name>
 					<description>Linux native chameleon driver</description>
 					<type>Native Driver</type>
 					<makefilepath>DRIVERS/CHAMELEON/driver.mak</makefilepath>
-                    		<os>Linux</os>
+					<os>Linux</os>
 				</swmodule>
 			</swmodulelist>
 		</model>
