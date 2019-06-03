@@ -1,8 +1,6 @@
 #**************************  M a k e f i l e ********************************
 #  
 #         Author: aw/ts
-#          $Date: 2010/12/03 19:23:03 $
-#      $Revision: 1.3 $
 #  
 #    Description: makefile descriptor for z069 reset/wdg kernel module
 #                      
@@ -23,10 +21,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=lx_z69
+# the next line is updated during the MDIS installation
+STAMPED_REVISION="13Z069-90_02_02-2-g8656ad2-dirty_2019-05-30"
+
+DEF_REVISION=MAK_REVISION=$(STAMPED_REVISION)
 
 MAK_LIBS=
 
 MAK_SWITCH=$(SW_PREFIX)Z069_RST_WDG_BIT=0 \
+		$(SW_PREFIX)$(DEF_REVISION) \
 		   $(SW_PREFIX)MAC_MEM_MAPPED
 
 MAK_INCL=

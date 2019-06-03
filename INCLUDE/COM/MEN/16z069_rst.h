@@ -3,8 +3,6 @@
  *         \file 16z069_rst.h
  *
  *       \author rt
- *        $Date: 2007/11/23 15:15:47 $
- *    $Revision: 3.2 $
  *
  *        \brief Header file for reset controller in Chameleon FPGA
  *

@@ -3,8 +3,6 @@
  *         \file men_z069_reset_wdg_int.h
  *
  *       \author aw
- *        $Date: 2009/02/09 10:42:53 $
- *    $Revision: 1.2 $
  *
  *  	 \brief  Internal header file of reset LINUX native driver
  *
