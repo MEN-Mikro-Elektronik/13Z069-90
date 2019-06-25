@@ -607,5 +607,6 @@ module_exit( z069_cleanup );
 MODULE_LICENSE( "GPL" );
 MODULE_DESCRIPTION( "MEN watchdog/Reset IP core driver" );
 MODULE_AUTHOR("Thomas Schnuerer <thomas.schnuerer@men.de>");
-
-
+#ifdef MAK_REVISION
+MODULE_VERSION(MENT_XSTR(MAK_REVISION));
+#endif
